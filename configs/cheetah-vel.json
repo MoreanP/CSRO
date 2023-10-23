@@ -1,0 +1,53 @@
+{
+    "env_name": "cheetah-vel",
+    "n_train_tasks": 30,
+    "n_eval_tasks": 10,
+    "interpolation": true,
+    "randomize_tasks": 0,
+    "latent_size": 20,
+    "env_params": {
+        "n_tasks": 40,
+        "randomize_tasks": 0,
+        "max_episode_steps": 200
+    },
+    "algo_params": {
+        "meta_batch": 16,
+        "num_iterations": 105,
+        "replay_buffer_size": 200000,
+        "num_tasks_sample": 5,
+        "num_train_steps_per_itr": 1000,
+        "num_steps_per_eval": 600,
+        "embedding_batch_size": 100,
+        "embedding_mini_batch_size": 100,
+        "max_path_length":200,
+        "discount": 0.99,
+        "reward_scale": 5,
+        "sparse_rewards": 0,
+        "num_exp_traj_eval": 2,
+        "dump_eval_paths": 0,
+
+        "train_epoch": [100000, 1000000, 50000],
+        "eval_epoch": [100000, 1000000, 50000],
+        "sample": 1,
+        "n_trj": 50,
+        "data_dir": "./offline_dataset/cheetah-vel",
+
+        "divergence_name": "kl",
+        "use_brac": 1,
+        "alpha_init": 5e1, 
+        "alpha_max": 2e3,
+
+        "allow_backward_z": false,
+        "use_FOCAL_cl": true,        
+        "use_club": true,
+        "club_model_loss_weight": 10,
+        "club_loss_weight": 10
+
+    },
+    "util_params": {
+        "use_gpu": 1,
+        "debug": false,
+        "exp_name": "CSRO"
+    },
+    "algo_type": "CSRO"
+}
